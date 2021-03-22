@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+<body>
+    <h1>Exercício 2</h1>
+    <p>solicita dois números para o usuário e exibe como resultado as quatro operações aritméticas básicas entre os dois números: soma, subtração, multiplicação e divisão.</p>
+
+    <script>
+        const n1 = parseFloat(prompt("Insira um número:"))
+        const n2 = parseFloat(prompt("Insira outro número:"))
+
+        const soma = n1 + n2
+        const sub = n1 - n2
+        const mult = n1 * n1
+        const div = n1 / n2
+        const rest = n1 % n2 // resto da divisão
+
+        document.write(`
+            <ul>
+                <li>A Soma dos números é <b>${soma}</b></li>
+                <li>A Subtração dos números é <b>${sub}</b></li>
+                <li>A Multiplicação dos números é <b>${mult}</b></li>
+                <li>A Divisão dos números é <b>${div}</b></li>
+            </ul>
+        `)
+    </script>
+</body>
+</html>

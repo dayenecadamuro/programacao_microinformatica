@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exercicio 5</h1>
+    <p>Pedindo dois números para o usuário e soma as duas e exibe o resultado</p>
+
+    <form id="form">
+        <input id="field1" type="number" placeholder="Digite o primeiro número">
+        <input id="field2" type="number" placeholder="Digite o segundo número">
+        <button>Calcular</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function onSubmit(event) {
+            event.preventDefault()
+
+            let n1 = parseFloat(field1.value)
+            let n2 = parseFloat(field2.value)
+
+            if (isNaN(n1) || isNaN(n2)) {
+                result.innerHTML = '<p>Digite números validos.</p>'
+                return
+            }
+
+            let sum = n1 + n2
+            let sub = n1 - n2
+            let mult = n1 * n1
+            let div = n1 / n2
+            let rest = n1 % n2 // resto da divisão
+
+            result.innerHTML = `
+                <ul>
+                    <li>A Soma dos números é <b>${sum}</b></li>
+                    <li>A Subtração dos números é <b>${sub}</b></li>
+                    <li>A Multiplicação dos números é <b>${mult}</b></li>
+                    <li>A Divisão dos números é <b>${div}</b></li>
+                </ul>
+            `
+        }
+
+        form.addEventListener('submit', onSubmit)
+    </script>
+</body>
+</html>

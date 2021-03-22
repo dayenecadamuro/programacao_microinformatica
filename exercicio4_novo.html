@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+<body>
+    <h1>Exercício 4</h1>
+    <p>pega valor A,B e C e calcula x1 e x2 através da Fórmula de Bhaskara exibindo-os.</p>
+
+    <script>
+        let a = parseFloat(prompt("insira o valor de A:"))
+        let b = parseFloat(prompt("insira o valor de B:"))
+        let c = parseFloat(prompt("insira o valor de C:"))
+
+        let delta = b * b - (4 * a * c) // emvez de b* b da pra por Math.pow(b, 2)
+
+        let x1 = (-b + Math.sqrt(delta)) / (2 * a)
+        let x2 = (-b - Math.sqrt(delta)) / (2 * a)
+
+        document.write(`x1 e x2 são respectivamente <b>{${x1}, ${x2}}</b>`)
+    </script>
+</body>
+</html>

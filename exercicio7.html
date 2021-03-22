@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="base.css">
+    <title>Exercício 7</title>
+</head>
+<body>
+    <h1>Exercício 7</h1>
+    <p>Mensagem personalizada por cada opção</p>
+
+    <form id="form">
+        <select id="field">
+            <option value="">Como está o clima hoje?</option>
+            <option value="sunny">Ensolarado</option>
+            <option value="rainy">Chuvoso</option>
+            <option value="snowing">Nevando</option>
+            <option value="overcast">Nublado</option>
+        </select>
+        <button>Ver minha opinião</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function onSubmit(event) {
+            event.preventDefault()
+
+            let choice = field.value
+
+            field.className = ''
+  
+            if (choice === 'sunny') {
+                result.innerHTML = 'Está sol! vamos para a praia?'
+                //document.body.style.backgroundImage = 'url(https://c4.wallpaperflare.com/wallpaper/264/661/191/por-do-sol-wallpaper-preview.jpg)'
+            } else if (choice === 'rainy') {
+                result.innerHTML = 'Está chovendo! leve seu guarda-chuva!'
+            } else if (choice === 'snowing') {
+                result.innerHTML = 'Está nevando! vamos fazer um boneco de neve?'
+            } else if (choice === 'overcast') {
+                result.innerHTML = 'Está nublado! talvez chova. Então leve seu guarda-chuva!'
+            } else {
+                result.innerHTML = '<p class="negative">Selecione uma opção!</p>'
+                field.className = 'negative'
+                field.focus()
+            }
+        }
+
+        form.addEventListener('submit', onSubmit)
+    </script>
+</body>
+</html>
